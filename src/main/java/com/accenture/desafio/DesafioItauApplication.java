@@ -15,6 +15,7 @@ import com.accenture.desafio.modelo.Frete;
 import com.accenture.desafio.modelo.Produto;
 import com.accenture.desafio.servico.CarrinhoService;
 import com.accenture.desafio.servico.DescontoServico;
+import com.accenture.desafio.servico.EmailServico;
 import com.accenture.desafio.servico.ImpostoServico;
 
 @SpringBootApplication
@@ -27,9 +28,13 @@ public class DesafioItauApplication {
 		DescontoServico descontoServico = new DescontoServico();
 		ImpostoServico impostoServico = new ImpostoServico();
 		CarrinhoService carrinhoService = new CarrinhoService();
+		EmailServico emailServico = new EmailServico();
+		
 		List<Produto> produtos = new ArrayList<Produto>();
 
-		Cliente cliente = new Cliente.ClienteBuilder().nome("Maiculino de Andrade").build();
+		Cliente cliente = new Cliente.ClienteBuilder()
+				.nome("Maiculino de Andrade")
+				.email("marcelohenrr@hotmail.com").build();
 
 		Frete frete = new Frete.FreteBuilder().cepOrigem("30690-770").cepDestino("55620-000").build();
 
@@ -65,6 +70,9 @@ public class DesafioItauApplication {
 		carrinho = carrinhoService.calcularValorFinalCompra(carrinho);
 		
 		LOGGER.log(Level.INFO, "Carrinho " + carrinho.toString());
+		
+		LOGGER.log(Level.INFO, "Enviando email");
+		emailServico.enviarEmail(carrinho);
 	}
 
 }
