@@ -6,7 +6,6 @@ public class Produto {
 	private double valor;
 	private double valorDesconto;
 	private double valorImposto;
-	private double valorFinal;
 	private String cupom;
 	
 	private CategoriaEnum categoriaEnum;
@@ -17,7 +16,6 @@ public class Produto {
 		private double valor;
 		private double valorDesconto;
 		private double valorImposto;
-		private double valorFinal;
 		private CategoriaEnum categoriaEnum;
 		private String cupom;
 
@@ -46,12 +44,7 @@ public class Produto {
 			return this;
 		}
 
-		public ProdutoBuilder valorFinal(double valorFinal) {
-			this.valorFinal = valorFinal;
-			return this;
-		}
-
-		public ProdutoBuilder CategoriaEnum(CategoriaEnum categoriaEnum) {
+		public ProdutoBuilder categoriaEnum(CategoriaEnum categoriaEnum) {
 			this.categoriaEnum = categoriaEnum;
 			return this;
 		}
@@ -73,7 +66,6 @@ public class Produto {
 		valor = builder.valor;
 		valorDesconto = builder.valorDesconto;
 		valorImposto = builder.valorImposto;
-		valorFinal = builder.valorFinal;
 		categoriaEnum = builder.categoriaEnum;
 		cupom = builder.cupom;
 	}
@@ -84,18 +76,6 @@ public class Produto {
 
 	public boolean isPromocao() {
 		return promocao;
-	}
-
-	public double getTotal() {
-		return valorFinal;
-	}
-
-	public void setValorFinal(double total) {
-		this.valorFinal = total;
-	}
-
-	public double getValorFinal() {
-		return valorFinal;
 	}
 
 	public double getValor() {
@@ -125,4 +105,13 @@ public class Produto {
 	public CategoriaEnum getCategoriaEnum() {
 		return categoriaEnum;
 	}
+
+	@Override
+	public String toString() {
+		return "Produto [descricao=" + descricao + ", promocao=" + promocao + ", valor=" + valor + ", valorDesconto="
+				+ valorDesconto + ", valorImposto=" + valorImposto + ", cupom=" + cupom + ", categoriaEnum="
+				+ categoriaEnum + "]";
+	}
+	
+	
 }

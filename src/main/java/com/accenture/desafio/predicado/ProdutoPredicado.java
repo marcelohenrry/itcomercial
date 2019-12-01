@@ -13,7 +13,7 @@ public abstract class ProdutoPredicado {
 	}
 	
 	public static Predicate<Produto> informouCupom() {
-		return produto -> !produto.getCupom().equals("");
+		return produto -> produto.getCupom() != null;
 	}
 	
 	public static Predicate<Produto> isentoImposto() {

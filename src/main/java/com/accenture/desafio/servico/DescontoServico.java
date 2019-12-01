@@ -12,7 +12,7 @@ public class DescontoServico implements IDesconto {
 	@Override
 	public List<Produto> calcularDesconto(List<Produto> produtos) {
 		produtos.stream().filter(ProdutoPredicado.informouCupom()).filter(ProdutoPredicado.emPromocao()).forEach(p -> {
-			p.setValorDesconto((Constante.DESCONTO * p.getValor()) / 1000);
+			p.setValorDesconto((Constante.DESCONTO * p.getValor()) / 100);
 		});
 		return produtos;
 	}

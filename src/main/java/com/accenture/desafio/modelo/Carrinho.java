@@ -70,6 +70,10 @@ public class Carrinho {
 		return valor;
 	}
 
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
 	public Frete getFrete() {
 		return frete;
 	}
@@ -77,4 +81,12 @@ public class Carrinho {
 	public boolean isMidiaDigital() {
 		return midiaDigital;
 	}
+
+	@Override
+	public String toString() {
+		return "Carrinho [valor=" + valor + ", midiaDigital=" + midiaDigital + ", cliente=" + cliente + ", produtos="
+				+ produtos + ", frete=" + frete + "]";
+	}
+	
+	
 }
