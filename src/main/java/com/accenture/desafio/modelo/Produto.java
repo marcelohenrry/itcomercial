@@ -3,61 +3,81 @@ package com.accenture.desafio.modelo;
 public class Produto {
 	private String descricao;
 	private boolean promocao;
-	private boolean midiaDigital;
 	private double valor;
+	private double valorDesconto;
+	private double valorImposto;
+	private double valorFinal;
+	private String cupom;
 	
-	private Cupom cupom;
-	private Imposto imposto;
-	
+	private CategoriaEnum categoriaEnum;
+
 	public static class ProdutoBuilder {
 		private String descricao;
 		private boolean promocao;
-		private boolean midiaDigital;
 		private double valor;
-		
-		private Cupom cupom;
-		private Imposto imposto;
-		
-		
+		private double valorDesconto;
+		private double valorImposto;
+		private double valorFinal;
+		private CategoriaEnum categoriaEnum;
+		private String cupom;
+
 		public ProdutoBuilder descricao(String descricao) {
 			this.descricao = descricao;
 			return this;
 		}
+
 		public ProdutoBuilder promocao(boolean promocao) {
 			this.promocao = promocao;
 			return this;
 		}
-		public ProdutoBuilder midiaDigital(boolean midiaDigital) {
-			this.midiaDigital = midiaDigital;
-			return this;
-		}
+
 		public ProdutoBuilder valor(double valor) {
 			this.valor = valor;
 			return this;
 		}
-		public ProdutoBuilder cupom(Cupom cupom) {
+
+		public ProdutoBuilder valorDesconto(double valorDesconto) {
+			this.valorDesconto = valorDesconto;
+			return this;
+		}
+
+		public ProdutoBuilder valorImposto(double valorImposto) {
+			this.valorImposto = valorImposto;
+			return this;
+		}
+
+		public ProdutoBuilder valorFinal(double valorFinal) {
+			this.valorFinal = valorFinal;
+			return this;
+		}
+
+		public ProdutoBuilder CategoriaEnum(CategoriaEnum categoriaEnum) {
+			this.categoriaEnum = categoriaEnum;
+			return this;
+		}
+
+		public ProdutoBuilder cupom(String cupom) {
 			this.cupom = cupom;
 			return this;
 		}
-		public ProdutoBuilder imposto(Imposto imposto) {
-			this.imposto = imposto;
-			return this;
-		}
+
 		public Produto build() {
 			return new Produto(this);
 		}
-		
+
 	}
 
 	private Produto(ProdutoBuilder builder) {
 		descricao = builder.descricao;
 		promocao = builder.promocao;
-		midiaDigital = builder.midiaDigital;
 		valor = builder.valor;
+		valorDesconto = builder.valorDesconto;
+		valorImposto = builder.valorImposto;
+		valorFinal = builder.valorFinal;
+		categoriaEnum = builder.categoriaEnum;
 		cupom = builder.cupom;
-		imposto = builder.imposto;
 	}
-	
+
 	public String getDescricao() {
 		return descricao;
 	}
@@ -66,19 +86,43 @@ public class Produto {
 		return promocao;
 	}
 
-	public boolean isMidiaDigital() {
-		return midiaDigital;
+	public double getTotal() {
+		return valorFinal;
+	}
+
+	public void setValorFinal(double total) {
+		this.valorFinal = total;
+	}
+
+	public double getValorFinal() {
+		return valorFinal;
 	}
 
 	public double getValor() {
 		return valor;
 	}
 
-	public Cupom getCupom() {
+	public double getValorDesconto() {
+		return valorDesconto;
+	}
+
+	public void setValorDesconto(double valorDesconto) {
+		this.valorDesconto = valorDesconto;
+	}
+
+	public double getValorImposto() {
+		return valorImposto;
+	}
+
+	public void setValorImposto(double valorImposto) {
+		this.valorImposto = valorImposto;
+	}
+
+	public String getCupom() {
 		return cupom;
 	}
 
-	public Imposto getImposto() {
-		return imposto;
+	public CategoriaEnum getCategoriaEnum() {
+		return categoriaEnum;
 	}
 }
