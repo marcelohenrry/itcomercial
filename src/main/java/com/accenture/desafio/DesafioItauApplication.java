@@ -34,7 +34,7 @@ public class DesafioItauApplication {
 
 		Cliente cliente = new Cliente.ClienteBuilder()
 				.nome("Maiculino de Andrade")
-				.email("marcelohenrr@hotmail.com").build();
+				.email("guitarrapedalgt100@gmail.com").build();
 
 		Frete frete = new Frete.FreteBuilder().cepOrigem("30690-770").cepDestino("55620-000").peso(5).build();
 
@@ -74,7 +74,6 @@ public class DesafioItauApplication {
 		LOGGER.log(Level.INFO, "Enviando email... ");
 		emailServico.enviarEmail(carrinho);
 		
-		LOGGER.log(Level.INFO, "Email enviado para " + cliente.getNome());
 	}
 
 }

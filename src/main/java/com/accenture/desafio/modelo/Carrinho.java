@@ -1,6 +1,7 @@
 package com.accenture.desafio.modelo;
 
 import java.util.List;
+import java.util.StringJoiner;
 
 public class Carrinho {
 	private double valor;
@@ -84,9 +85,8 @@ public class Carrinho {
 
 	@Override
 	public String toString() {
-		return "Carrinho [valor=" + valor + ", midiaDigital=" + midiaDigital + ", cliente=" + cliente + ", produtos="
-				+ produtos + ", frete=" + frete + "]";
+		return new StringJoiner(", ", "[", "]").add("valor="+String.valueOf(valor)).add("Mídia digital="+String.valueOf(midiaDigital))
+				.add("Cliente="+String.valueOf(cliente)).add("Produtos="+String.valueOf(produtos)).add("Frete="+String.valueOf(frete)).toString();
 	}
-	
-	
+
 }
