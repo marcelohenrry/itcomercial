@@ -19,7 +19,7 @@ class CarrinhoServiceTest {
 
 	@Test
 	void testCalcularFrete() {
-		Frete frete = new Frete.FreteBuilder().cepOrigem("30690-770").cepDestino("55620-000").build();
+		Frete frete = new Frete.FreteBuilder().cepOrigem("30690-770").cepDestino("55620-000").peso(0.3).build();
 		Carrinho carrinho = new Carrinho.CarrinhoBuilder()
 				.frete(frete)
 				.build();

@@ -1,16 +1,16 @@
 package com.accenture.desafio.modelo;
 
-import java.util.StringJoiner;
-
 public class Frete {
 	private String cepOrigem;
 	private String cepDestino;
+	private double peso;
 	private double valor;
 	private short prazoEntrega;
 
 	public static class FreteBuilder {
 		private String cepOrigem;
 		private String cepDestino;
+		private double peso;
 		private double valor;
 		private short prazoEntrega;
 
@@ -33,6 +33,11 @@ public class Frete {
 			return this;
 		}
 
+		public FreteBuilder peso(double peso) {
+			this.peso = peso;
+			return this;
+		}
+
 		public FreteBuilder prazoEntrega(short prazoEntrega) {
 			this.prazoEntrega = prazoEntrega;
 			return this;
@@ -46,8 +51,9 @@ public class Frete {
 	private Frete(FreteBuilder builder) {
 		this.cepDestino = builder.cepDestino;
 		this.cepOrigem = builder.cepOrigem;
-		valor = builder.valor;
-		prazoEntrega = builder.prazoEntrega;
+		this.valor = builder.valor;
+		this.peso = builder.peso;
+		this.prazoEntrega = builder.prazoEntrega;
 	}
 
 	public String getCepOrigem() {
@@ -73,10 +79,15 @@ public class Frete {
 	public void setPrazoEntrega(short prazoEntrega) {
 		this.prazoEntrega = prazoEntrega;
 	}
-	
+
+	public double getPeso() {
+		return peso;
+	}
+
 	@Override
 	public String toString() {
-		return new StringJoiner(", ", "Frete [", "]").add("Valor: " + String.valueOf(getValor()))
-				.add("Praso entrega " + String.valueOf(getPrazoEntrega())).toString();
+		return "Frete [cepOrigem=" + cepOrigem + ", cepDestino=" + cepDestino + ", peso=" + peso + ", valor=" + valor
+				+ ", prazoEntrega=" + prazoEntrega + "]";
 	}
+
 }

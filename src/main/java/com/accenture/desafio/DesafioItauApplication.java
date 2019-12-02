@@ -36,7 +36,7 @@ public class DesafioItauApplication {
 				.nome("Maiculino de Andrade")
 				.email("marcelohenrr@hotmail.com").build();
 
-		Frete frete = new Frete.FreteBuilder().cepOrigem("30690-770").cepDestino("55620-000").build();
+		Frete frete = new Frete.FreteBuilder().cepOrigem("30690-770").cepDestino("55620-000").peso(5).build();
 
 		Produto produto = new Produto.ProdutoBuilder()
 				.descricao("Trançado do Rei Careca")
@@ -69,10 +69,12 @@ public class DesafioItauApplication {
 		
 		carrinho = carrinhoService.calcularValorFinalCompra(carrinho);
 		
-		LOGGER.log(Level.INFO, "Carrinho " + carrinho.toString());
+		LOGGER.log(Level.INFO, "Compra " + carrinho.toString());
 		
-		LOGGER.log(Level.INFO, "Enviando email");
+		LOGGER.log(Level.INFO, "Enviando email... ");
 		emailServico.enviarEmail(carrinho);
+		
+		LOGGER.log(Level.INFO, "Email enviado para " + cliente.getNome());
 	}
 
 }

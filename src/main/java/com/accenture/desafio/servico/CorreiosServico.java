@@ -31,8 +31,10 @@ public class CorreiosServico implements IClienteCorreios {
 		url.append(frete.getCepOrigem());
 		url.append("&sCepDestino=");
 		url.append(frete.getCepDestino());
+		url.append("&nVlPeso=");
+		url.append(frete.getPeso());
 		url.append(
-				"&nVlPeso=0.3&nVlComprimento=30&nVlAltura=2&nVlLargura=15&nVlDiametro=0.0&nCdFormato=1&sCdMaoPropria=N&sCdAvisoRecebimento=N&nVlValorDeclarado=0,00&nCdServico=04510&nCdEmpresa=&sDsSenha=&StrRetorno=xml");
+				"&nVlComprimento=30&nVlAltura=2&nVlLargura=15&nVlDiametro=0.0&nCdFormato=1&sCdMaoPropria=N&sCdAvisoRecebimento=N&nVlValorDeclarado=0,00&nCdServico=04510&nCdEmpresa=&sDsSenha=&StrRetorno=xml");
 		HttpURLConnection connection = null;
 		try {
 			URL urlNet = new URL(url.toString());
