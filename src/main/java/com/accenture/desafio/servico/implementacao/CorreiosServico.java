@@ -1,4 +1,4 @@
-package com.accenture.desafio.servico;
+package com.accenture.desafio.servico.implementacao;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +18,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import com.accenture.desafio.modelo.Frete;
-import com.accenture.desafio.servico.implementacao.IClienteCorreios;
+import com.accenture.desafio.servico.IClienteCorreios;
 import com.accenture.desafio.util.Constante;
 
 public class CorreiosServico implements IClienteCorreios {

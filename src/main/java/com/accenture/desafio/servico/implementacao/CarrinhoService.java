@@ -1,9 +1,9 @@
-package com.accenture.desafio.servico;
+package com.accenture.desafio.servico.implementacao;
 
 import com.accenture.desafio.modelo.Carrinho;
 import com.accenture.desafio.modelo.Frete;
 import com.accenture.desafio.predicado.CarrinhoPredicado;
-import com.accenture.desafio.servico.implementacao.ICarrinho;
+import com.accenture.desafio.servico.ICarrinho;
 
 public class CarrinhoService implements ICarrinho {
 	

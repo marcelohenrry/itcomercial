@@ -13,10 +13,10 @@ import com.accenture.desafio.modelo.CategoriaEnum;
 import com.accenture.desafio.modelo.Cliente;
 import com.accenture.desafio.modelo.Frete;
 import com.accenture.desafio.modelo.Produto;
-import com.accenture.desafio.servico.CarrinhoService;
-import com.accenture.desafio.servico.DescontoServico;
-import com.accenture.desafio.servico.EmailServico;
-import com.accenture.desafio.servico.ImpostoServico;
+import com.accenture.desafio.servico.implementacao.CarrinhoService;
+import com.accenture.desafio.servico.implementacao.DescontoServico;
+import com.accenture.desafio.servico.implementacao.EmailServico;
+import com.accenture.desafio.servico.implementacao.ImpostoServico;
 
 @SpringBootApplication
 public class DesafioItauApplication {

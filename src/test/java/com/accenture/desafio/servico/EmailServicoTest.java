@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import com.accenture.desafio.modelo.Carrinho;
 import com.accenture.desafio.modelo.Cliente;
+import com.accenture.desafio.servico.implementacao.EmailServico;
 
 class EmailServicoTest {
 	private EmailServico emailServico = new EmailServico();

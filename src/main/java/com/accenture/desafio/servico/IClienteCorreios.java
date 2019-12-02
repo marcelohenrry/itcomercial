@@ -1,4 +1,4 @@
-package com.accenture.desafio.servico.implementacao;
+package com.accenture.desafio.servico;
 
 import com.accenture.desafio.modelo.Frete;
 

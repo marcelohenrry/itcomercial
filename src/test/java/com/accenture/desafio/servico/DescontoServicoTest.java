@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import com.accenture.desafio.modelo.CategoriaEnum;
 import com.accenture.desafio.modelo.Produto;
+import com.accenture.desafio.servico.implementacao.DescontoServico;
 
 class DescontoServicoTest {
 	private DescontoServico descontoServico = new DescontoServico();

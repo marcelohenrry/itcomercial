@@ -11,6 +11,9 @@ import com.accenture.desafio.modelo.Carrinho;
 import com.accenture.desafio.modelo.CategoriaEnum;
 import com.accenture.desafio.modelo.Frete;
 import com.accenture.desafio.modelo.Produto;
+import com.accenture.desafio.servico.implementacao.CarrinhoService;
+import com.accenture.desafio.servico.implementacao.DescontoServico;
+import com.accenture.desafio.servico.implementacao.ImpostoServico;
 
 class CarrinhoServiceTest {
 	private DescontoServico descontoServico = new DescontoServico();
