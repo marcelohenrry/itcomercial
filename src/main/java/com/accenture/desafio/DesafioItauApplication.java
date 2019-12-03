@@ -5,9 +5,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import com.accenture.desafio.modelo.Carrinho;
 import com.accenture.desafio.modelo.CategoriaEnum;
 import com.accenture.desafio.modelo.Cliente;
@@ -18,13 +15,11 @@ import com.accenture.desafio.servico.implementacao.DescontoServico;
 import com.accenture.desafio.servico.implementacao.EmailServico;
 import com.accenture.desafio.servico.implementacao.ImpostoServico;
 
-@SpringBootApplication
 public class DesafioItauApplication {
 	private static final Logger LOGGER = Logger.getLogger(DesafioItauApplication.class.getName());
 
 	public static void main(String[] args) {
-		SpringApplication.run(DesafioItauApplication.class, args);
-
+		
 		DescontoServico descontoServico = new DescontoServico();
 		ImpostoServico impostoServico = new ImpostoServico();
 		CarrinhoService carrinhoService = new CarrinhoService();

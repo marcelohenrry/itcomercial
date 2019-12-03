@@ -4,7 +4,8 @@ import com.accenture.desafio.modelo.Carrinho;
 import com.accenture.desafio.modelo.Frete;
 
 public interface ICarrinho {
-	Frete calcularFrete(Carrinho carrinho);
 	
-	Carrinho calcularValorFinalCompra(Carrinho carrinho);
+	public Frete calcularFrete(Carrinho carrinho);
+	
+	public Carrinho calcularValorFinalCompra(Carrinho carrinho);
 }

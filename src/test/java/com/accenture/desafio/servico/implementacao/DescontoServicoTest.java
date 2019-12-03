@@ -1,20 +1,19 @@
-package com.accenture.desafio.servico;
+package com.accenture.desafio.servico.implementacao;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import com.accenture.desafio.modelo.CategoriaEnum;
 import com.accenture.desafio.modelo.Produto;
-import com.accenture.desafio.servico.implementacao.ImpostoServico;
 
-class ImpostoServicoTest {
-	private ImpostoServico impostoServico = new ImpostoServico();
+public class DescontoServicoTest {
+	private DescontoServico descontoServico = new DescontoServico();
 	@Test
-	void testCalcularImposto() {
+	public void testCalcularDesconto() {
 		List<Produto> produtos = new ArrayList<Produto>();
 		Produto produto = new Produto.ProdutoBuilder()
 				.descricao("Trançado do Rei Careca")
@@ -31,10 +30,10 @@ class ImpostoServicoTest {
 				.build();
 		produtos.add(produto2);
 		
-		produtos = impostoServico.calcularImposto(produtos);
+		produtos = descontoServico.calcularDesconto(produtos);
 		
-		assertEquals(produtos.get(0).getValorImposto(), 0.0);
-		assertEquals(produtos.get(1).getValorImposto(), 0.6);
+		assertEquals(produtos.get(0).getValorDesconto(), 0.4, 0.01);
+		assertEquals(produtos.get(1).getValorDesconto(), 0.0, 0.01);
 	}
 
 }

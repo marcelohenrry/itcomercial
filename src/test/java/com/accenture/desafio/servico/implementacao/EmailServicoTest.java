@@ -1,18 +1,16 @@
-package com.accenture.desafio.servico;
+package com.accenture.desafio.servico.implementacao;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import com.accenture.desafio.modelo.Carrinho;
 import com.accenture.desafio.modelo.Cliente;
-import com.accenture.desafio.servico.implementacao.EmailServico;
 
-class EmailServicoTest {
+public class EmailServicoTest {
 	private EmailServico emailServico = new EmailServico();
-
 	@Test
-	void testEnviarEmail() {
+	public void testEnviarEmail() {
 		Cliente cliente = new Cliente.ClienteBuilder()
 				.nome("Maiculino de Andrade")
 				.email("guitarrapedalgt100@gmail.com").build();
